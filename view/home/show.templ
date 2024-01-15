@@ -1,0 +1,15 @@
+package home
+
+import (
+    "yugiohdle/view/layout"
+    "yugiohdle/view/component"
+    "yugiohdle/model"
+)
+
+templ Show(card model.Card) {
+    @layout.Base() {
+        <h1>This is a random card</h1>
+        <h2>{ card.Name }</h2>
+        @component.Input("name")
+    }
+}

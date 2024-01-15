@@ -4,7 +4,7 @@ import (
     "io"
     "net/http"
     "encoding/json"
-    "yugiohdle/app/model"
+    "yugiohdle/model"
 )
 
 type CardService struct {
@@ -15,7 +15,7 @@ func NewCardService() *CardService {
     return &CardService{}
 }
 
-func (s *CardService) getRandomCard() (model.Card, error) {
+func (s *CardService) GetRandomCard() (model.Card, error) {
 	randomCard := "https://db.ygoprodeck.com/api/v7/randomcard.php"
 
 	response, err := http.Get(randomCard)
