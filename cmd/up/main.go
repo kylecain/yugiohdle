@@ -18,7 +18,7 @@ func main() {
 		panic("failed to connect database")
 	}
 
-	s := service.NewCardService()
+	s := service.CardService{}
 
 	cards, _ := s.GetAllCards()
 

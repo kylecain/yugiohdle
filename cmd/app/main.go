@@ -23,6 +23,7 @@ func main() {
     cardService := service.NewCardService(*cardRepository)
     homeHandler := handler.NewHomeHandler(*cardService)
     app.GET("/", homeHandler.HandleHomeShow)
+    app.POST("/search", homeHandler.HandleHomeShow)
 
     app.Start(":8080")
 }
