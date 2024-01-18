@@ -1,10 +1,10 @@
 package component
 
 templ GuessButton() {
-    <button hx-post="/guess"
-        hx-trigger="click"
-        hx-target="#parent-div"
-        hx-swap="outerHTML"
+    <button 
+        hx-post="/guess"
+        hx-target="#guess-results"
+        hx-swap="beforeend"
     >
         GUESS
     </button>
