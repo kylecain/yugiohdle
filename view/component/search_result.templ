@@ -1,0 +1,13 @@
+package component
+
+import (
+    "yugiohdle/model"
+)
+
+templ SearchResult(cards []model.Card) {
+    for _, card := range cards {
+        <tr>
+            <td>{ card.Name }</td>
+        </tr>
+    }
+}

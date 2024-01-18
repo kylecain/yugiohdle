@@ -70,3 +70,7 @@ func (s *CardService) GetAllCards() ([]model.Card, error) {
     
     return data.Data, nil
 }
+
+func (s *CardService) SearchCards(searchTerm string) []model.Card {
+    return s.CardRepository.SearchCards(searchTerm)
+}

@@ -27,7 +27,15 @@ func main() {
 		return
 	}
 
-	db.AutoMigrate(&model.Card{})
+	db.AutoMigrate(
+        &model.Card{},
+        &model.CardSet{},
+        &model.CardImage{},
+        &model.CardPrice{},
+    )
 
-	db.CreateInBatches(&cards, 250)
+    result := db.CreateInBatches(&cards, 250)
+    if result.Error != nil {
+        panic("failed to save objects: " + result.Error.Error())
+    }
 }

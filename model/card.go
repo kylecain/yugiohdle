@@ -14,34 +14,12 @@ type Card struct {
 	Level     int    `json:"level"`
 	Race      string `json:"race"`
 	Attribute string `json:"attribute"`
-	Card_sets []struct {
-        gorm.Model
-        CardID uint
-		Set_name        string `json:"set_name"`
-		Set_code        string `json:"set_code"`
-		Set_rarity      string `json:"set_rarity"`
-		Set_rarity_code string `json:"set_rarity_code"`
-		Set_price       string `json:"set_price"`
-	} `json:"card_sets"`
-	Card_images []struct {
-        gorm.Model
-        CardID uint
-		Id                int    `json:"id"`
-		Image_url         string `json:"image_url"`
-		Image_url_small   string `json:"image_url_small"`
-		Image_url_cropped string `json:"image_url_cropped"`
-	} `json:"card_images"`
-	Card_prices []struct {
-        gorm.Model
-        CardID uint
-		Cardmarket_price   string `json:"cardmarket_price"`
-		Tcgplayer_price    string `json:"tcgplayer_price"`
-		Ebay_price         string `json:"ebay_price"`
-		Amazon_price       string `json:"amazon_price"`
-		Coolstuffinc_price string `json:"coolstuffinc_price"`
-	} `json:"card_prices"`
+	Card_sets []CardSet `json:"card_sets"`
+    Card_images []CardImage	 `json:"card_images"`
+    Card_prices []CardPrice `json:"card_prices"`
 }
 
 type CardData struct {
     Data []Card `json:"data"`
 }
+

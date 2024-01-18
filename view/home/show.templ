@@ -8,8 +8,7 @@ import (
 
 templ Show(card model.Card) {
     @layout.Base() {
-        <h1>This is a random card</h1>
-        <h2>{ card.Name }</h2>
+        <h2>This is a random card: { card.Name }</h2>
         @component.Input("name")
     }
 }
