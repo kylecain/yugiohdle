@@ -14,9 +14,9 @@ type Card struct {
 	Level     int    `json:"level"`
 	Race      string `json:"race"`
 	Attribute string `json:"attribute"`
-	Card_sets []CardSet `json:"card_sets"`
-    Card_images []CardImage	 `json:"card_images"`
-    Card_prices []CardPrice `json:"card_prices"`
+	CardSets []CardSet `json:"card_sets"`
+    CardImages []CardImage	 `json:"card_images"`
+    CardPrices []CardPrice `json:"card_prices"`
 }
 
 type CardData struct {
