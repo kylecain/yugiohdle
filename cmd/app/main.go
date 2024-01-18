@@ -10,22 +10,21 @@ import (
 	"gorm.io/gorm"
 )
 
-
 func main() {
-    app := echo.New()
+	app := echo.New()
 
 	db, err := gorm.Open(sqlite.Open("database.db"), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
 	}
 
-    cardRepository := repository.NewCardRepository(db)
-    cardService := service.NewCardService(*cardRepository)
-    homeHandler := handler.NewHomeHandler(*cardService)
-    app.GET("/", homeHandler.HandleHomeShow)
+	cardRepository := repository.NewCardRepository(db)
+	cardService := service.NewCardService(*cardRepository)
+	homeHandler := handler.NewHomeHandler(*cardService)
+	app.GET("/", homeHandler.HandleHomeShow)
 
-    searchHandler := handler.NewSearchHandler(*cardService)
-    app.POST("/search", searchHandler.HandleSearchShow)
+	searchHandler := handler.NewSearchHandler(*cardService)
+	app.POST("/search", searchHandler.HandleSearchShow)
 
-    app.Start(":8080")
+	app.Start(":8080")
 }

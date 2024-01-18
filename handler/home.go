@@ -8,21 +8,17 @@ import (
 )
 
 type HomeHandler struct {
-    CardService service.CardService
+	CardService service.CardService
 }
 
 func NewHomeHandler(cardService service.CardService) *HomeHandler {
-    return &HomeHandler{
-        CardService: cardService,
-    }
+	return &HomeHandler{
+		CardService: cardService,
+	}
 }
 
-func(h HomeHandler) HandleHomeShow(c echo.Context) error {
-    card, err := h.CardService.GetRandomCard()
+func (h HomeHandler) HandleHomeShow(c echo.Context) error {
+	cardName := h.CardService.GetCurrentCard()
 
-    if err != nil {
-        print(err)
-    }
-
-    return render(c, home.Show(card))
+    return render(c, home.Show(cardName))
 }

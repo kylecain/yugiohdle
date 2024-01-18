@@ -7,18 +7,18 @@ import (
 )
 
 type CardRepository struct {
-    db *sql.DB
+	db *sql.DB
 }
 
 func NewCardRepository(db *sql.DB) *CardRepository {
-    return &CardRepository{db: db}
+	return &CardRepository{db: db}
 }
 
 func (r *CardRepository) Create(ctx context.Context, card model.Card) error {
-    statement := `
+	statement := `
 
     `
-    _, err := r.db.ExecContext(ctx)
+	_, err := r.db.ExecContext(ctx)
 
-    return err
+	return err
 }

@@ -10,13 +10,13 @@ import (
 )
 
 type CardService struct {
-    CardRepository repository.CardRepository
+	CardRepository repository.CardRepository
 }
 
 func NewCardService(cardRepository repository.CardRepository) *CardService {
-    return &CardService{
-        CardRepository: cardRepository,
-    }
+	return &CardService{
+		CardRepository: cardRepository,
+	}
 }
 
 func (s *CardService) GetRandomCard() (model.Card, error) {
@@ -40,37 +40,41 @@ func (s *CardService) GetRandomCard() (model.Card, error) {
 		return model.Card{}, err
 	}
 
-    return card, nil
+	return card, nil
 }
 
 func (s *CardService) GetAllCards() ([]model.Card, error) {
-    url := "https://db.ygoprodeck.com/api/v7/cardinfo.php"
+	url := "https://db.ygoprodeck.com/api/v7/cardinfo.php"
 
-    response, err := http.Get(url)
+	response, err := http.Get(url)
 
 	if err != nil {
-        fmt.Println(err)
+		fmt.Println(err)
 		return []model.Card{}, err
 	}
 	defer response.Body.Close()
 
 	body, err := io.ReadAll(response.Body)
 	if err != nil {
-        fmt.Println(err)
+		fmt.Println(err)
 		return []model.Card{}, err
 	}
 
-    var data model.CardData
+	var data model.CardData
 
-    err = json.Unmarshal(body, &data)
-    if err != nil {
-        fmt.Println(err)
-        return []model.Card{}, err
-    }
-    
-    return data.Data, nil
+	err = json.Unmarshal(body, &data)
+	if err != nil {
+		fmt.Println(err)
+		return []model.Card{}, err
+	}
+
+	return data.Data, nil
 }
 
 func (s *CardService) SearchCards(searchTerm string) []model.Card {
-    return s.CardRepository.SearchCards(searchTerm)
+	return s.CardRepository.SearchCards(searchTerm)
+}
+
+func (s *CardService) GetCurrentCard() string {
+	return s.CardRepository.GetCurrentCard()
 }

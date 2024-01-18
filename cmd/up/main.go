@@ -21,6 +21,18 @@ func main() {
 	s := service.CardService{}
 
 	cards, _ := s.GetAllCards()
+	randomCard, _ := s.GetRandomCard()
+	guess := model.Guess{
+		ImageUrlCropped: randomCard.CardImages[0].ImageUrlCropped,
+		Name:            randomCard.Name,
+		Type:            randomCard.Type,
+		FrameType:       randomCard.FrameType,
+		Atk:             randomCard.Atk,
+		Def:             randomCard.Def,
+		Level:           randomCard.Level,
+		Race:            randomCard.Race,
+		Attribute:       randomCard.Attribute,
+	}
 
 	if err != nil {
 		fmt.Println("error getting cards")
@@ -28,14 +40,20 @@ func main() {
 	}
 
 	db.AutoMigrate(
-        &model.Card{},
-        &model.CardSet{},
-        &model.CardImage{},
-        &model.CardPrice{},
-    )
+		&model.Card{},
+		&model.CardSet{},
+		&model.CardImage{},
+		&model.CardPrice{},
+		&model.Guess{},
+	)
 
-    result := db.CreateInBatches(&cards, 250)
-    if result.Error != nil {
-        panic("failed to save objects: " + result.Error.Error())
-    }
+	result := db.CreateInBatches(&cards, 250)
+	if result.Error != nil {
+		panic("failed to save objects: " + result.Error.Error())
+	}
+
+	result = db.Create(&guess)
+	if result.Error != nil {
+		panic("failed to save objects: " + result.Error.Error())
+	}
 }
