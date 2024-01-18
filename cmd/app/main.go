@@ -26,5 +26,8 @@ func main() {
 	searchHandler := handler.NewSearchHandler(*cardService)
 	app.POST("/search", searchHandler.HandleSearchShow)
 
+//	guessHandler := handler.NewGuessHandler(*cardService)
+	// app.POST("/guess", searchHandler.HandleSearchShow)
+
 	app.Start(":8080")
 }

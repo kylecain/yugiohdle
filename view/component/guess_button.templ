@@ -1,0 +1,11 @@
+package component
+
+templ GuessButton() {
+    <button hx-post="/guess"
+        hx-trigger="click"
+        hx-target="#parent-div"
+        hx-swap="outerHTML"
+    >
+        GUESS
+    </button>
+}

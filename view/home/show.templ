@@ -9,5 +9,33 @@ templ Show(name string) {
     @layout.Base() {
         <h2>This is a random card: { name }</h2>
         @component.Input("name")
+        @component.GuessButton()
+
+        <table class="search-table">
+            <thead>
+            <tr>
+                <th>Monster Name</th>
+            </tr>
+            </thead>
+            <tbody id="search-results">
+            </tbody>
+        </table>
+
+        <table class="guess-table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>FrameType</th>
+                <th>Atk</th>
+                <th>Def</th>
+                <th>Level</th>
+                <th>Race</th>
+                <th>Attribute</th>
+            </tr>
+            </thead>
+                <tbody id="guess-results">
+            </tbody>
+        </table>
     }
 }
