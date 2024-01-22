@@ -21,3 +21,4 @@ func NewGuessHandler(cardService service.CardService) *GuessHandler {
 func (h GuessHandler) HandleGuessShow(c echo.Context) error {
 	return render(c, component.GuessResult([]model.Guess{}))
 }
+

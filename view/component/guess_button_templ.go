@@ -23,7 +23,7 @@ func GuessButton() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<button hx-post=\"/guess\" hx-target=\"#guess-results\" hx-swap=\"beforeend\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<button x-on:click=\"guessCount--; console.log(searchBarText);\" hx-post=\"/guess\" hx-vals=\"js:{ &#34;searchBarText&#34;: this.searchBarText }\" hx-target=\"#guess-results\" hx-swap=\"beforeend\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

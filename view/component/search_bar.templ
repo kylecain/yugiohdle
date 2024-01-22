@@ -1,0 +1,15 @@
+package component
+
+templ SearchBar(name string) {
+    <input 
+        class="form-control" 
+        type="search" 
+        name="search" 
+        placeholder="Search Monster" 
+        x-model="searchBarText"
+        hx-post="/search" 
+        hx-trigger="input changed delay:500ms, search" 
+        hx-target="#search-results" 
+        hx-indicator=".htmx-indicator"
+    />
+}
