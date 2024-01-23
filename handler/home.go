@@ -20,5 +20,5 @@ func NewHomeHandler(cardService service.CardService) *HomeHandler {
 func (h HomeHandler) HandleHomeShow(c echo.Context) error {
 	cardName := h.CardService.GetCurrentCard()
 
-    return render(c, home.Show(cardName))
+	return render(c, home.Show(cardName))
 }

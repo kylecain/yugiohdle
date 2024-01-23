@@ -5,11 +5,18 @@ templ Base() {
         <head>
             <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
             <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+            <meta charset="UTF-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <link href="/dist/tailwind.css" rel="stylesheet"/>
         </head>
 
         <body>
-            Yugiohdle
-            { children... }
+            <div>
+                <div class="text-center">
+                    Yugiohdle
+                </div>
+                { children... }
+            </div>
         </body>
     </html>
 }
