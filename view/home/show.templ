@@ -7,12 +7,11 @@ import (
 
 templ Show(name string) {
     @layout.Base() {
-        <div x-data="{ guessCount: 10, searchBarText: ''}">
+        <div x-data="{ guessCount: 10 }">
             <h2>This is a random card: { name }</h2>
             <div x-text="'Guesses Remaining: ' + guessCount"></div>
             <div x-show="guessCount === 0">Game Over</div>
-            @component.SearchBar("name")
-            @component.GuessButton()
+            @component.GuessForm()
 
             <table class="search-table">
                 <thead>

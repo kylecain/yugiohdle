@@ -1,13 +1,12 @@
 package component
 
 templ GuessButton() {
-    <button 
-        x-on:click="guessCount--; console.log(searchBarText);"
+    <input
+        type="submit"
+        value="GUESS"
+        x-on:click="guessCount--"
         hx-post="/guess"
-        hx-vals='js:{ "searchBarText": this.searchBarText }'
         hx-target="#guess-results"
         hx-swap="beforeend"
-    >
-        GUESS
-    </button>
+    />
 }

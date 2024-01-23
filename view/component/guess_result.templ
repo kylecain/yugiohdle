@@ -2,17 +2,17 @@ package component
 
 import (
     "yugiohdle/model"
+    "strconv"
 )
 
-templ GuessResult(guesses []model.Guess) {
+templ GuessRow(guess model.Guess) {
     <tr>
-        <td>Name</td>
-        <td>Type</td>
-        <td>FrameType</td>
-        <td>Atk</td>
-        <td>Def</td>
-        <td>Level</td>
-        <td>Race</td>
-        <td>Attribute</td>
+        <td>{ guess.Name }</td>
+        <td>{ guess.Type }</td>
+        <td>{ strconv.Itoa(guess.Atk) }</td>
+        <td>{ strconv.Itoa(guess.Def) }</td>
+        <td>{ strconv.Itoa(guess.Level) }</td>
+        <td>{ guess.Race }</td>
+        <td>{ guess.Attribute }</td>
     </tr>
 }

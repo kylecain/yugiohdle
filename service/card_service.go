@@ -78,3 +78,7 @@ func (s *CardService) SearchCards(searchTerm string) []model.Card {
 func (s *CardService) GetCurrentCard() string {
 	return s.CardRepository.GetCurrentCard()
 }
+
+func (s *CardService) SearchCard(cardName string) model.Card {
+	return s.CardRepository.SearchCard(cardName)
+}

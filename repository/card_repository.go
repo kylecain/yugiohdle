@@ -33,3 +33,11 @@ func (r *CardRepository) GetCurrentCard() string {
 	r.DB.Last(&guess)
 	return guess.Name
 }
+
+func (r *CardRepository) SearchCard(cardName string) model.Card {
+	var card model.Card
+	r.DB.Where("name = ?", cardName).
+		First(&card)
+
+	return card
+}
