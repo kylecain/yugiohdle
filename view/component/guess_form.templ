@@ -1,7 +1,10 @@
 package component
 
 templ GuessForm() {
-    <form>
+    <form 
+        class="m-0" 
+        autocomplete="off"
+    >
         @SearchBar("name")
         @GuessButton()
     </form>

@@ -7,23 +7,26 @@ import (
 
 templ Show(name string) {
     @layout.Base() {
-        <div x-data="{ guessCount: 10 }">
+        <div x-data="{ guessCount: 10, showSearchResults: false, searchText: '' }">
             <h2>This is a random card: { name }</h2>
             <div x-text="'Guesses Remaining: ' + guessCount"></div>
             <div x-show="guessCount === 0">Game Over</div>
+
             @component.GuessForm()
 
-            <table class="search-table">
-                <thead>
-                <tr>
-                    <th>Monster Name</th>
-                </tr>
-                </thead>
-                <tbody id="search-results">
-                </tbody>
-            </table>
+            <div 
+                id="search-results" 
+                class="absolute min-w-64 z-1 bg-white shadow"
+                x-show="showSearchResults"
+                x-init="
+                    $watch('searchText',value => {
+                        showSearchResults = (value.length > 0)
+                    })
+                "            
+            >
+            </div>
 
-            <table class="guess-table min-w-full">
+            <table class="guess-table w-full">
                 <thead>
                 <tr>
                     <th>Name</th>

@@ -544,14 +544,53 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.m-0 {
+  margin: 0px;
+}
+
+.flex {
+  display: flex;
+}
+
 .table {
   display: table;
 }
 
-.min-w-full {
-  min-width: 100%;
+.w-64 {
+  width: 16rem;
 }
 
-.text-center {
-  text-align: center;
+.w-full {
+  width: 100%;
+}
+
+.min-w-64 {
+  min-width: 16rem;
+}
+
+.basis-1\/6 {
+  flex-basis: 16.666667%;
+}
+
+.basis-4\/6 {
+  flex-basis: 66.666667%;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }

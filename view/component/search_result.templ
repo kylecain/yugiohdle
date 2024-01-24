@@ -6,8 +6,14 @@ import (
 
 templ SearchResult(cards []model.Card) {
     for _, card := range cards {
-        <tr>
-            <td>{ card.Name }</td>
-        </tr>
+        <div
+            x-on:click="
+                $refs.searchBar.value = $el.textContent;
+                showSearchResults = false
+            "
+            style="cursor: pointer;"
+        >
+            { card.Name }
+        </div>
     }
 }

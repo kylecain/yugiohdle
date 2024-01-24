@@ -1,22 +1,27 @@
 package layout
 
 templ Base() {
-    <html>
-        <head>
-            <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
-            <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-            <meta charset="UTF-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-            <link href="/dist/tailwind.css" rel="stylesheet"/>
-        </head>
+<html>
 
-        <body>
-            <div>
-                <div class="text-center">
-                    Yugiohdle
-                </div>
-                { children... }
-            </div>
-        </body>
-    </html>
+<head>
+    <script src="https://unpkg.com/htmx.org@1.9.10"
+        integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/tailwind.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="flex flex-row">
+        <div class="basis-1/6"></div>
+        <div class="basis-4/6">
+            Yugiohdle
+            { children... }
+        </div>
+        <div class="basis-1/6"></div>
+    </div>
+</body>
+</html>
 }
