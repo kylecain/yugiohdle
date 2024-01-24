@@ -13,34 +13,9 @@ templ Show(name string) {
             <div x-show="guessCount === 0">Game Over</div>
 
             @component.GuessForm()
+            @component.SearchResultsContainer()
+            @component.GuessTable()
 
-            <div 
-                id="search-results" 
-                class="absolute min-w-64 z-1 bg-white shadow"
-                x-show="showSearchResults"
-                x-init="
-                    $watch('searchText',value => {
-                        showSearchResults = (value.length > 0)
-                    })
-                "            
-            >
-            </div>
-
-            <table class="guess-table w-full">
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Atk</th>
-                    <th>Def</th>
-                    <th>Level</th>
-                    <th>Race</th>
-                    <th>Attribute</th>
-                </tr>
-                </thead>
-                <tbody id="guess-results">
-                </tbody>
-            </table>
         </div>
     }
 }
