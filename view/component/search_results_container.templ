@@ -3,13 +3,13 @@ package component
 templ SearchResultsContainer() {
     <div 
         id="search-results" 
-        class="absolute min-w-64 z-1 bg-white shadow"
+        class="absolute min-w-80 z-1 bg-white shadow"
         x-show="showSearchResults"
         x-init="
             $watch('searchText',value => {
                 showSearchResults = (value.length > 0)
             })
-        "            
+        "
     >
     </div>
 }

@@ -1,6 +1,7 @@
 package repository
 
 import (
+	"regexp"
 	"yugiohdle/model"
 
 	"gorm.io/gorm"
@@ -17,10 +18,12 @@ func NewCardRepository(db *gorm.DB) *CardRepository {
 }
 
 func (r *CardRepository) SearchCards(searchTerm string) []model.Card {
-	expression := "%" + searchTerm + "%"
+    re := regexp.MustCompile(`[^a-zA-Z0-9]`)
+    filteredTerm := re.ReplaceAllString(searchTerm, "%")
+	expression := "%" + filteredTerm + "%"
 
 	var cards []model.Card
-	r.DB.Where("name LIKE ?", expression).
+	r.DB.Where("name LIKE ? AND type LIKE '%monster%'", expression).
 		Order("LENGTH(name)").
 		Limit(10).
 		Find(&cards)

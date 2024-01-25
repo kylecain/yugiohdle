@@ -12,8 +12,12 @@ templ Show(name string) {
             <div x-text="'Guesses Remaining: ' + guessCount"></div>
             <div x-show="guessCount === 0">Game Over</div>
 
-            @component.GuessForm()
-            @component.SearchResultsContainer()
+            <div class="flex flex-row justify-center m-4">
+                <div class="min-w-80">
+                    @component.GuessForm()
+                    @component.SearchResultsContainer()
+                </div>
+            </div>
             @component.GuessTable()
 
         </div>

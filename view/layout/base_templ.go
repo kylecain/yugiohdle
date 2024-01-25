@@ -41,12 +41,16 @@ func Base() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</script><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><link href=\"/dist/tailwind.css\" rel=\"stylesheet\"></head><body><div class=\"flex flex-row\"><div class=\"basis-1/6\"></div><div class=\"basis-4/6\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</script><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><link href=\"/dist/tailwind.css\" rel=\"stylesheet\"></head><body><div class=\"flex flex-row\"><div class=\"basis-1/6\"></div><div class=\"basis-4/6\"><div class=\"flex flex-row justify-center text-2xl font-bold m-8\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		templ_7745c5c3_Var4 := `Yugiohdle`
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var4)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

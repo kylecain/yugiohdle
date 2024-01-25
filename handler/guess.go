@@ -1,7 +1,6 @@
 package handler
 
 import (
-	"fmt"
 	"yugiohdle/model"
 	"yugiohdle/service"
 	"yugiohdle/view/component"
@@ -20,7 +19,6 @@ func NewGuessHandler(cardService service.CardService) *GuessHandler {
 }
 
 func (h GuessHandler) HandleGuessShow(c echo.Context) error {
-	fmt.Println(c)
 	cardName := c.Request().FormValue("search")
 
 	card := h.CardService.SearchCard(cardName)

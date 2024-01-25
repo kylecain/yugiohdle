@@ -22,3 +22,4 @@ type Card struct {
 type CardData struct {
 	Data []Card `json:"data"`
 }
+

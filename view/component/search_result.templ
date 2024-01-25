@@ -7,6 +7,7 @@ import (
 templ SearchResult(cards []model.Card) {
     for _, card := range cards {
         <div
+            class="hover:bg-slate-500 px-1"
             x-on:click="
                 $refs.searchBar.value = $el.textContent;
                 showSearchResults = false

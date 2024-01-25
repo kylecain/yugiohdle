@@ -23,7 +23,7 @@ func SearchBar(name string) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<input class=\"form-control w-64\" id=\"searchBar\" type=\"search\" name=\"search\" placeholder=\"Search Monster\" hx-post=\"/search\" hx-trigger=\"input changed delay:500ms, search\" hx-target=\"#search-results\" x-ref=\"searchBar\" x-model=\"searchText\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<input class=\"form-control grow pl-1 rounded-md focus:outline-none\" id=\"searchBar\" type=\"search\" name=\"search\" placeholder=\"Search Monster\" hx-post=\"/search\" hx-trigger=\"input changed delay:500ms, search\" hx-target=\"#search-results\" x-ref=\"searchBar\" x-model=\"searchText\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

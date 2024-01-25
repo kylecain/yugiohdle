@@ -28,14 +28,14 @@ func SearchResult(cards []model.Card) templ.Component {
 		}
 		ctx = templ.ClearChildren(ctx)
 		for _, card := range cards {
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div x-on:click=\"\n                $refs.searchBar.value = $el.textContent;\n                showSearchResults = false\n            \" style=\"cursor: pointer;\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"hover:bg-slate-500 px-1\" x-on:click=\"\n                $refs.searchBar.value = $el.textContent;\n                showSearchResults = false\n            \" style=\"cursor: pointer;\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var2 string
 			templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(card.Name)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `view/component/search_result.templ`, Line: 15, Col: 23}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `view/component/search_result.templ`, Line: 16, Col: 23}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 			if templ_7745c5c3_Err != nil {

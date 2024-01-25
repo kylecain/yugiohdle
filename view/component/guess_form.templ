@@ -2,10 +2,12 @@ package component
 
 templ GuessForm() {
     <form 
-        class="m-0" 
         autocomplete="off"
+        class="m-0"
     >
-        @SearchBar("name")
-        @GuessButton()
+        <div class="flex flex-row justify-between border-2 rounded-md border-black">
+            @SearchBar("name")
+            @GuessButton()
+        </div>
     </form>
 }

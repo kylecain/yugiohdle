@@ -23,7 +23,7 @@ func SearchResultsContainer() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div id=\"search-results\" class=\"absolute min-w-64 z-1 bg-white shadow\" x-show=\"showSearchResults\" x-init=\"\n            $watch(&#39;searchText&#39;,value =&gt; {\n                showSearchResults = (value.length &gt; 0)\n            })\n        \"></div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div id=\"search-results\" class=\"absolute min-w-80 z-1 rounded-md bg-white shadow\" x-show=\"showSearchResults\" x-init=\"\n            $watch(&#39;searchText&#39;,value =&gt; {\n                showSearchResults = (value.length &gt; 0)\n            })\n        \"></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
